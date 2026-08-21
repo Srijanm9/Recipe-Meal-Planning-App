@@ -1,0 +1,259 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Saved Recipes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#4f644c",
+                        "primary": "#4f644c",
+                        "secondary": "#72594c",
+                        "tertiary-fixed": "#ffdad7",
+                        "primary-fixed-dim": "#b6cdb0",
+                        "tertiary-container": "#d9afab",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#f3ede5",
+                        "primary-fixed": "#d1e9cb",
+                        "surface-container-low": "#f9f3eb",
+                        "on-tertiary-container": "#60413f",
+                        "inverse-on-surface": "#f6f0e8",
+                        "surface-dim": "#dfd9d2",
+                        "on-error": "#ffffff",
+                        "outline": "#747871",
+                        "on-secondary-container": "#765d50",
+                        "outline-variant": "#c3c8bf",
+                        "on-surface": "#1d1b17",
+                        "on-secondary-fixed-variant": "#584236",
+                        "inverse-primary": "#b6cdb0",
+                        "surface-container-highest": "#e7e2da",
+                        "on-tertiary-fixed-variant": "#5e3f3c",
+                        "on-surface-variant": "#434841",
+                        "secondary-container": "#fad9c8",
+                        "secondary-fixed": "#fddccb",
+                        "secondary-fixed-dim": "#e0c0b0",
+                        "surface-container-high": "#ede7e0",
+                        "on-secondary-fixed": "#29180d",
+                        "tertiary-fixed-dim": "#e8bcb8",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "accent-pink": "#F2C6C2",
+                        "surface": "#fef8f0",
+                        "tertiary": "#785653",
+                        "on-primary-fixed-variant": "#384c36",
+                        "on-primary-fixed": "#0d200d",
+                        "ink-brown": "#4A4038",
+                        "on-background": "#1d1b17",
+                        "butter-yellow": "#F4E6B8",
+                        "primary-container": "#a8bfa3",
+                        "on-primary-container": "#3a4e38",
+                        "surface-bright": "#fef8f0",
+                        "inverse-surface": "#32302b",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#2d1513",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "background": "#fef8f0",
+                        "surface-variant": "#e7e2da"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "24px",
+                        "stack-sm": "8px",
+                        "stack-lg": "32px",
+                        "stack-md": "16px",
+                        "unit": "8px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Nunito Sans"],
+                        "label-sm": ["Nunito Sans"],
+                        "headline-md": ["Nunito Sans"],
+                        "headline-lg": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "label-md": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "display-lg": ["Nunito Sans"],
+                        "headline-lg-mobile": ["Nunito Sans"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "500" }],
+                        "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            background-color: #fef8f0; /* surface */
+        }
+        .sticker-shadow {
+            box-shadow: 0 8px 24px rgba(74, 64, 56, 0.12); /* ink-brown tinted shadow */
+        }
+        .squishy-border {
+            border-bottom: 3px solid rgba(74, 64, 56, 0.1);
+        }
+        /* Hide scrollbar for clean aesthetic */
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-surface text-ink-brown min-h-screen pb-[100px]">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim w-full py-4 px-margin-mobile flex justify-between items-center flat no shadows sticky top-0 z-40 pt-4">
+<button aria-label="Menu" class="w-10 h-10 flex items-center justify-center rounded-full hover:opacity-80 transition-opacity text-primary dark:text-primary-fixed-dim">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">BITES</h1>
+<div aria-label="User profile avatar" class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center overflow-hidden hover:opacity-80 transition-opacity border-2 border-surface-container-low">
+<span class="material-symbols-outlined text-ink-brown">face_4</span>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="px-margin-mobile pt-stack-sm pb-stack-lg max-w-4xl mx-auto md:px-8">
+<!-- Page Header -->
+<div class="relative mb-stack-lg mt-stack-sm flex items-center gap-2">
+<!-- Decorative Doodle Left -->
+<svg class="w-6 h-6 text-accent-pink animate-pulse" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+</svg>
+<h2 class="font-display-lg text-display-lg text-ink-brown relative z-10">Saved Recipes</h2>
+<!-- Decorative Doodle Right -->
+<svg class="w-5 h-5 text-primary-fixed-dim absolute -top-2 right-4 md:right-auto md:left-64 rotate-12" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+<polyline points="14 2 14 8 20 8"></polyline>
+</svg>
+</div>
+<!-- Bento Grid for Recipe Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Recipe Card 1 -->
+<article class="bg-surface-container-lowest rounded-xl p-stack-md sticker-shadow squishy-border border border-surface-container-high relative overflow-hidden group cursor-pointer transition-transform hover:-translate-y-1 duration-200">
+<!-- Image Wrapper -->
+<div class="relative h-48 w-full rounded-lg overflow-hidden mb-stack-sm bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A beautifully illustrated stack of chocolate pancakes on a cream plate. The illustration uses a playful, hand-drawn doodle style with soft organic lines and warm pastel colors. Golden syrup drips down the sides, topped with a square of yellow butter. The background is a clean, warm cream color fitting a light-mode UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWul--y9S0b2FvOQvpwoVIJYBZwaO8Fszrs-DU9_dgfZuwy9weIqNyuAzWBBs33mVrQVPEGcoKOJYKEwyNTenrCzIefm6vFxDqh0YT6RJeWRf0uq3_vTJw4lrisL3KSeyEtmj-jhvPq4B4QZJT8dO61oJoXTzLOjIR_3ev2HewNyhMARhSwp-cqJWP00DL8F-vAdjQwCa0eRrA5VAlx6HFK5m-FJ08LJwz26ePdJAKUTh8KzCBGGpM-w">
+<!-- Bookmark FAB -->
+<button aria-label="Remove from favorites" class="absolute top-3 right-3 w-10 h-10 bg-surface-container-lowest rounded-full flex items-center justify-center shadow-md hover:bg-secondary-container/30 transition-colors z-10 group-hover:scale-110 duration-200">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">bookmark</span>
+</button>
+<!-- Small decorative leaf doodle -->
+<svg class="absolute bottom-2 left-2 w-6 h-6 text-primary-fixed drop-shadow-sm rotate-45" fill="currentColor" viewBox="0 0 24 24">
+<path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22L6.66 19.7C7.14 19.87 7.64 20 8 20C19 20 22 3 22 3C22 3 21 8 17 8Z"></path>
+</svg>
+</div>
+<!-- Content -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="bg-butter-yellow text-ink-brown px-3 py-1 rounded-full font-label-sm text-label-sm">Breakfast</span>
+<span class="flex items-center text-on-surface-variant text-xs font-bold gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span> 25m
+                        </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-ink-brown leading-tight group-hover:text-primary transition-colors">Chocolate Pancakes</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mt-1">Fluffy, rich pancakes perfect for a weekend treat. Drizzled with maple.</p>
+</div>
+</article>
+<!-- Recipe Card 2 -->
+<article class="bg-secondary-container rounded-xl p-stack-md sticker-shadow squishy-border border border-secondary-fixed relative overflow-hidden group cursor-pointer transition-transform hover:-translate-y-1 duration-200">
+<!-- Image Wrapper -->
+<div class="relative h-48 w-full rounded-lg overflow-hidden mb-stack-sm bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A vibrant garden salad in a shallow, rustic bowl, depicted in a playful, hand-drawn doodle illustration style. The salad features crisp green leaves, bright orange carrot ribbons, and red cherry tomatoes. Soft, pastel aesthetic with organic ink-like outlines on a clean, light-mode background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3OkJy2znPXvOkMbPxxOC70hMOeWv0nHzqVLgE_yQ4mVn78ETQaVo4t9D8q__utFl2SBYwGHQCHxTCcjtcYrqE62QKP10vDvvdjENZYN7nK49GGjjhYkg7UhIdyYn0Cm1wPOqra-sd0mcOGYUChN_WnFMzXx1mZuat6HEkg7wCJd5f8jB-xdFkCudXCUl_OFXWBuE4MJ_JBqGi9UBJjvK_Z0d96wLKCy60zHBXXVZJRyZTW91BvKfGKA">
+<!-- Bookmark FAB -->
+<button aria-label="Remove from favorites" class="absolute top-3 right-3 w-10 h-10 bg-surface-container-lowest rounded-full flex items-center justify-center shadow-md hover:bg-secondary-container/30 transition-colors z-10 group-hover:scale-110 duration-200">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">bookmark</span>
+</button>
+<!-- Sparkle doodle -->
+<svg class="absolute bottom-3 right-3 w-5 h-5 text-accent-pink drop-shadow-sm" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4L12 2z"></path>
+</svg>
+</div>
+<!-- Content -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="bg-surface-container-lowest text-primary px-3 py-1 rounded-full font-label-sm text-label-sm border border-primary-fixed">Lunch</span>
+<span class="flex items-center text-on-secondary-container text-xs font-bold gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span> 10m
+                        </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-secondary-fixed-variant leading-tight group-hover:text-ink-brown transition-colors">Garden Salad</h3>
+<p class="font-body-md text-body-md text-on-secondary-container line-clamp-2 mt-1">Fresh greens, crunchy carrots, and a light vinaigrette. Quick and healthy.</p>
+</div>
+</article>
+<!-- Recipe Card 3 -->
+<article class="bg-surface-container-lowest rounded-xl p-stack-md sticker-shadow squishy-border border border-surface-container-high relative overflow-hidden group cursor-pointer transition-transform hover:-translate-y-1 duration-200">
+<!-- Image Wrapper -->
+<div class="relative h-48 w-full rounded-lg overflow-hidden mb-stack-sm bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A colorful vegetable stir-fry in a wok, illustrated in a cute, hand-drawn cartoon style. Broccoli, bell peppers, and noodles tossed together. Soft pastel colors, organic lines, and a warm, inviting aesthetic suitable for a joyful, light-mode culinary app interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBff4zK6FbQp93_AvorZySQHLgBxgDlUCdfpkD8tgipwvPdyV_JbQ670fkMoemwQZn_lyySOQm4fZjoZYG-FipnPdWCVrI469P5WBHakXkUFZfH-oOJeLcBekQ8gwEhNu308ry-a8f2LUuJWnorQwuWBDUjB2Zmuw5sVLr4Gu2wRdBJNyGSV38BTk6XYRPN8pnY8KDXqBWzXaeMTZYy2U8iiks0HZUDOy5YUcfGTdcSd8xndmTbBTnlCw">
+<!-- Bookmark FAB -->
+<button aria-label="Remove from favorites" class="absolute top-3 right-3 w-10 h-10 bg-surface-container-lowest rounded-full flex items-center justify-center shadow-md hover:bg-secondary-container/30 transition-colors z-10 group-hover:scale-110 duration-200">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: &quot;FILL&quot; 1;">bookmark</span>
+</button>
+</div>
+<!-- Content -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="bg-primary-fixed text-on-primary-fixed px-3 py-1 rounded-full font-label-sm text-label-sm">Dinner</span>
+<span class="flex items-center text-on-surface-variant text-xs font-bold gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span> 20m
+                        </span>
+</div>
+<h3 class="font-headline-md text-headline-md text-ink-brown leading-tight group-hover:text-primary transition-colors">Veggie Stir Fry</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mt-1">A colorful mix of seasonal vegetables tossed in a savory soy-ginger sauce.</p>
+</div>
+</article>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden bg-surface-container-low dark:bg-surface-container-lowest shadow-[0_-4px_20px_rgba(74,64,56,0.08)] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 rounded-t-lg">
+<!-- Inactive: Recipes -->
+<button class="flex flex-col items-center justify-center text-ink-brown opacity-60 p-2 hover:bg-secondary-container/30 rounded-full transition-colors group">
+<span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">restaurant_menu</span>
+<span class="font-label-sm text-label-sm mt-1">Recipes</span>
+</button>
+<!-- Inactive: Planner -->
+<button class="flex flex-col items-center justify-center text-ink-brown opacity-60 p-2 hover:bg-secondary-container/30 rounded-full transition-colors group">
+<span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">calendar_month</span>
+<span class="font-label-sm text-label-sm mt-1">Planner</span>
+</button>
+<!-- Inactive: Grocery -->
+<button class="flex flex-col items-center justify-center text-ink-brown opacity-60 p-2 hover:bg-secondary-container/30 rounded-full transition-colors group">
+<span class="material-symbols-outlined text-2xl group-hover:scale-110 transition-transform">shopping_basket</span>
+<span class="font-label-sm text-label-sm mt-1">Grocery</span>
+</button>
+<!-- Active: Favorites -->
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-5 py-2 scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: &quot;FILL&quot; 1;">favorite</span>
+<span class="font-label-sm text-label-sm mt-1">Favorites</span>
+</button>
+</nav>
+<!-- Desktop Nav Cluster (Hidden on mobile) -->
+<div class="hidden md:flex fixed top-4 right-margin-mobile z-50 gap-4">
+<button class="text-on-surface-variant font-label-md px-4 py-2 rounded-full hover:bg-surface-container transition-colors">Recipes</button>
+<button class="text-on-surface-variant font-label-md px-4 py-2 rounded-full hover:bg-surface-container transition-colors">Planner</button>
+<button class="text-on-surface-variant font-label-md px-4 py-2 rounded-full hover:bg-surface-container transition-colors">Grocery</button>
+<button class="text-primary font-bold font-label-md px-4 py-2 bg-primary-container rounded-full shadow-sm">Favorites</button>
+</div>
+
+
+</body></html>

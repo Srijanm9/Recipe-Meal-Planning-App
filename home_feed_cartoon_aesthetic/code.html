@@ -1,0 +1,260 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Kitchen Doodles - Home</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Google Fonts: Nunito Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#4f644c",
+                        "primary": "#4f644c",
+                        "secondary": "#72594c",
+                        "tertiary-fixed": "#ffdad7",
+                        "primary-fixed-dim": "#b6cdb0",
+                        "tertiary-container": "#d9afab",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#f3ede5",
+                        "primary-fixed": "#d1e9cb",
+                        "surface-container-low": "#f9f3eb",
+                        "on-tertiary-container": "#60413f",
+                        "inverse-on-surface": "#f6f0e8",
+                        "surface-dim": "#dfd9d2",
+                        "on-error": "#ffffff",
+                        "outline": "#747871",
+                        "on-secondary-container": "#765d50",
+                        "outline-variant": "#c3c8bf",
+                        "on-surface": "#1d1b17",
+                        "on-secondary-fixed-variant": "#584236",
+                        "inverse-primary": "#b6cdb0",
+                        "surface-container-highest": "#e7e2da",
+                        "on-tertiary-fixed-variant": "#5e3f3c",
+                        "on-surface-variant": "#434841",
+                        "secondary-container": "#fad9c8",
+                        "secondary-fixed": "#fddccb",
+                        "secondary-fixed-dim": "#e0c0b0",
+                        "surface-container-high": "#ede7e0",
+                        "on-secondary-fixed": "#29180d",
+                        "tertiary-fixed-dim": "#e8bcb8",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "accent-pink": "#F2C6C2",
+                        "surface": "#fef8f0",
+                        "tertiary": "#785653",
+                        "on-primary-fixed-variant": "#384c36",
+                        "on-primary-fixed": "#0d200d",
+                        "ink-brown": "#4A4038",
+                        "on-background": "#1d1b17",
+                        "butter-yellow": "#F4E6B8",
+                        "primary-container": "#a8bfa3",
+                        "on-primary-container": "#3a4e38",
+                        "surface-bright": "#fef8f0",
+                        "inverse-surface": "#32302b",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#2d1513",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "background": "#fef8f0",
+                        "surface-variant": "#e7e2da"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "24px",
+                        "stack-sm": "8px",
+                        "stack-lg": "32px",
+                        "stack-md": "16px",
+                        "unit": "8px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Nunito Sans"],
+                        "label-sm": ["Nunito Sans"],
+                        "headline-md": ["Nunito Sans"],
+                        "headline-lg": ["Nunito Sans"],
+                        "body-md": ["Nunito Sans"],
+                        "label-md": ["Nunito Sans"],
+                        "body-lg": ["Nunito Sans"],
+                        "display-lg": ["Nunito Sans"],
+                        "headline-lg-mobile": ["Nunito Sans"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "500" }],
+                        "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "34px", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Hide scrollbar for clean horizontal scrolling */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Subtle sticker shadow utility as per style guide */
+        .shadow-sticker {
+            box-shadow: 0 8px 24px rgba(74, 64, 56, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-surface text-ink-brown min-h-screen relative font-body-md selection:bg-secondary-container selection:text-ink-brown">
+<!-- TopAppBar (Shared Component) -->
+<header class="bg-surface dark:bg-surface-dim flex justify-between items-center px-margin-mobile pt-4 pb-4 w-full sticky top-0 z-40 bg-opacity-90 backdrop-blur-md">
+<button class="text-primary dark:text-primary-fixed-dim hover:opacity-80 transition-opacity p-2 rounded-full hover:bg-surface-container-high focus:outline-none">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">BITES</h1>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-secondary-container shadow-sm hover:opacity-80 transition-opacity cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="A cute, cartoon-style illustrated profile avatar of a happy character with warm, peachy skin tones and soft green accessories, set against a light cream background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeFfdQktDP9xQ84F--uRuDjg41g-ORtTH1gx37MNsN7KHAC4wrX2EX8cEQ51weeKpjJ6NBHA1S2O09V3TCQW_lz37hKqFBq8xDaqofFJnOfUGs2pag-ng1YLuyoaoKAMBnhEjC1Ee4_NeJ4KD383B_4Lg9J1QusDL5BIppBRuMDtGiIb-r5TFSfzHDgHeWUvpRbfeYt7G042-HFCQRWclsVxMHB8BW9KzmkHo3bIN1agiGAvAwztNjpg">
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="px-margin-mobile pb-[120px] pt-stack-sm flex flex-col gap-stack-lg max-w-2xl mx-auto">
+<!-- Header Section -->
+<section class="flex flex-col gap-stack-sm relative">
+<h2 class="font-display-lg text-display-lg text-ink-brown relative z-10">
+                What are you<br>craving today?
+            </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant z-10">Find something delicious to make.</p>
+<!-- Decorative Accent -->
+<img aria-hidden="true" class="absolute -top-6 -right-4 w-20 h-20 object-contain opacity-90 transform rotate-12 z-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWIAblxlK7iHWMPfS-A74obRfBSQEMFPeLTFsl7KzYrS9oCpyE9Xcyvbrm358ZUW1LQWOOmPTk6UhZVl-R3T34opa6EKK-935Y_KzSwyBPnTDMIl7-IUel-f_EjO0zjnCC6hFSiwESnLHlMLKME9G2uEpL85KTYCr0Ncz9cWXDa8vkDjC2L_0bjoVvcj0vabmIr5u6jl42lZd_SCTpFGVBpqYwkbKMN1B4zXakq-ChbKHRDTdHc43QVQ">
+</section>
+<!-- Search Bar -->
+<section>
+<div class="bg-surface-container-high rounded-full px-6 py-4 flex items-center gap-3 border border-outline-variant/30 focus-within:border-primary-container focus-within:ring-4 focus-within:ring-primary-container/20 transition-all shadow-sm">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none outline-none w-full font-body-md text-ink-brown placeholder:text-outline focus:ring-0 p-0" placeholder="Search recipes, ingredients..." type="text">
+</div>
+</section>
+<!-- Category Chips -->
+<section class="-mx-margin-mobile px-margin-mobile overflow-x-auto no-scrollbar pb-2">
+<div class="flex gap-3 w-max">
+<button class="bg-primary-container text-on-primary-container font-label-md text-label-md px-6 py-3 rounded-full flex items-center gap-2 shadow-sm hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">sunny</span> Breakfast
+                </button>
+<button class="bg-secondary-container text-on-secondary-container font-label-md text-label-md px-6 py-3 rounded-full flex items-center gap-2 shadow-sm hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">lunch_dining</span> Lunch
+                </button>
+<button class="bg-tertiary-container text-on-tertiary-container font-label-md text-label-md px-6 py-3 rounded-full flex items-center gap-2 shadow-sm hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">dinner_dining</span> Dinner
+                </button>
+<button class="bg-butter-yellow text-ink-brown font-label-md text-label-md px-6 py-3 rounded-full flex items-center gap-2 shadow-sm hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">cake</span> Snacks
+                </button>
+</div>
+</section>
+<!-- Featured Recipe -->
+<section class="flex flex-col gap-stack-sm relative">
+<div class="flex justify-between items-end mb-2">
+<h3 class="font-headline-md text-headline-md text-ink-brown">Featured For You</h3>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-4 flex flex-col gap-4 shadow-sticker border border-outline-variant/20 relative cursor-pointer hover:-translate-y-1 transition-transform duration-300">
+<!-- Floating Heart FAB -->
+<button class="absolute top-8 right-8 z-10 bg-surface-container-lowest/90 backdrop-blur-sm p-3 rounded-full text-accent-pink shadow-md hover:scale-110 transition-transform focus:outline-none">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">favorite</span>
+</button>
+<div class="w-full h-56 rounded-lg overflow-hidden relative bg-surface-variant">
+<img class="w-full h-full object-cover" data-alt="A warm, inviting flat-lay photograph of a bowl of creamy garlic pasta, garnished with fresh herbs and cracked black pepper. The image has a soft-focus, vibrant, illustrated filter applied to blend perfectly with a cute, pastel cartoon UI design. Warm lighting highlights the textures of the dish against a soft peach background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2kQ0oSs9omBSDX4z84Qs6jwvDxsQzh6__VB8ABMS--NODpq8-ih3YF7oBGYg64OcHIHNZ0mAMTfzar02uEjtBiTPPMzUq9XFcwlINqjmLT_an21MN94MkkUtPhF5IfRTRJQQ8ri6WhquUVkdZlDes8NzvGW6hOxGIWMpMDuhnRmYo0MJ-zG3SFwFny392Jfe_5RAybAc7sh4IaQgbyCeRYqzQ7yRPQ6Calyi-sYEl-RbVHVTSgoTWxg">
+</div>
+<div class="flex flex-col gap-2 px-2">
+<h4 class="font-headline-lg-mobile text-headline-lg-mobile text-ink-brown">Creamy Garlic Pasta</h4>
+<div class="flex items-center gap-3">
+<span class="bg-butter-yellow text-ink-brown px-3 py-1.5 rounded-full font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 25 min
+                        </span>
+<span class="bg-primary-fixed text-on-primary-fixed px-3 py-1.5 rounded-full font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">psychology</span> Easy
+                        </span>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Recipes -->
+<section class="flex flex-col gap-stack-md">
+<h3 class="font-headline-md text-headline-md text-ink-brown">Recent Creations</h3>
+<div class="flex flex-col gap-4">
+<!-- List Item 1 -->
+<div class="bg-surface-container-lowest rounded-lg p-3 flex gap-4 shadow-sticker border border-outline-variant/20 items-center hover:bg-surface-container-low transition-colors cursor-pointer relative overflow-hidden">
+<div class="w-24 h-24 rounded-DEFAULT overflow-hidden flex-shrink-0 bg-surface-variant">
+<img class="w-full h-full object-cover" data-alt="A top-down view of beautifully plated avocado toast on crusty sourdough bread, sprinkled with chili flakes and microgreens. The lighting is bright and airy, with a soft, warm pastel filter giving it a stylized, cozy sticker aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhY9-IEp0zDt0byqUtwDq8_UzSdij_xlO6c3by9nrpgCtgmAGL1AnrlAkRuaVYcveqpmO8jrQcvYzZkIYVKxLVa2mupDjTsJNWox0ZQ1YnG9LNkMCIMOkEwalRmCZCjKlhJdX_sUz67d4sP4Ux_WOAR__MelatPDXis3ZicVuU6mi0SiIfYXRMxGLCPvpQmr_EjCVVvR_c1QINkX110w9VIglVAcUyd3IkES3w2XKuuzujXN7rh3rDow">
+</div>
+<div class="flex flex-col gap-1 flex-grow">
+<h4 class="font-body-lg text-body-lg font-bold text-ink-brown">Avocado Toast</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 10 min
+                        </p>
+</div>
+<div class="pr-2 text-tertiary-container">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+<!-- Small Doodle Accent -->
+<img aria-hidden="true" class="absolute -bottom-2 -right-2 w-12 h-12 object-contain opacity-50 transform -rotate-12" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWIAblxlK7iHWMPfS-A74obRfBSQEMFPeLTFsl7KzYrS9oCpyE9Xcyvbrm358ZUW1LQWOOmPTk6UhZVl-R3T34opa6EKK-935Y_KzSwyBPnTDMIl7-IUel-f_EjO0zjnCC6hFSiwESnLHlMLKME9G2uEpL85KTYCr0Ncz9cWXDa8vkDjC2L_0bjoVvcj0vabmIr5u6jl42lZd_SCTpFGVBpqYwkbKMN1B4zXakq-ChbKHRDTdHc43QVQ">
+</div>
+<!-- List Item 2 -->
+<div class="bg-surface-container-lowest rounded-lg p-3 flex gap-4 shadow-sticker border border-outline-variant/20 items-center hover:bg-surface-container-low transition-colors cursor-pointer relative overflow-hidden">
+<div class="w-24 h-24 rounded-DEFAULT overflow-hidden flex-shrink-0 bg-surface-variant">
+<img class="w-full h-full object-cover" data-alt="A colorful, rustic bowl of mixed vegetable pasta featuring cherry tomatoes, zucchini, and bright green peas. The image is treated with a soft, warm illustrative filter to feel friendly and appetizing within a light, creamy app interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAx-AZ5aOTgVWTuqmRe4VXcWEUEhhqmOuLwJ75uI-_uVPmU3r_GVSWzaZOKugLeRvpw6j8ElPt9g5p_TfOsLR9zPw5eocrCv0tJvH8_nE4SCzXJgPy8Jl1NKK1OuwBmivwrU045AAhgjV7cpw_JqqFbBd9djaRfxuykeaKN4LRuouLXlG0lIyFuKSny5kL-ORIHKO-TddviyQMoMzlVgvvrl7Chn5MBPIdeqQzixkJroUgulM8tkXRT7A">
+</div>
+<div class="flex flex-col gap-1 flex-grow">
+<h4 class="font-body-lg text-body-lg font-bold text-ink-brown">Vegetable Pasta</h4>
+<p class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 35 min
+                        </p>
+</div>
+<div class="pr-2 text-tertiary-container">
+<span class="material-symbols-outlined">chevron_right</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Shared Component) -->
+<!-- Applying ACTIVE state styles to 'Recipes' -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-4 bg-surface-container-low dark:bg-surface-container-lowest shadow-[0_-4px_20px_rgba(74,64,56,0.08)] rounded-t-lg">
+<!-- Tab 1: Recipes (ACTIVE) -->
+<button class="group flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-5 py-2 scale-110 transition-transform hover:opacity-80 focus:outline-none">
+<span class="material-symbols-outlined text-[24px] mb-1" style="font-variation-settings: &quot;FILL&quot; 1;">restaurant_menu</span>
+<span class="font-label-sm text-label-sm">Recipes</span>
+</button>
+<!-- Tab 2: Planner (INACTIVE) -->
+<button class="group flex flex-col items-center justify-center text-ink-brown opacity-60 p-2 hover:bg-secondary-container/30 rounded-full transition-colors focus:outline-none">
+<span class="material-symbols-outlined text-[24px] mb-1">calendar_month</span>
+<span class="font-label-sm text-label-sm">Planner</span>
+</button>
+<!-- Tab 3: Grocery (INACTIVE) -->
+<button class="group flex flex-col items-center justify-center text-ink-brown opacity-60 p-2 hover:bg-secondary-container/30 rounded-full transition-colors focus:outline-none">
+<span class="material-symbols-outlined text-[24px] mb-1">shopping_basket</span>
+<span class="font-label-sm text-label-sm">Grocery</span>
+</button>
+<!-- Tab 4: Favorites (INACTIVE) -->
+<button class="group flex flex-col items-center justify-center text-ink-brown opacity-60 p-2 hover:bg-secondary-container/30 rounded-full transition-colors focus:outline-none">
+<span class="material-symbols-outlined text-[24px] mb-1">favorite</span>
+<span class="font-label-sm text-label-sm">Favorites</span>
+</button>
+</nav>
+
+
+</body></html>
